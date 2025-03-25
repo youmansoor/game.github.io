@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Question</h1>
+    <p id="Ques">What is the capital of India?</p>
+    <div id="main">
+    <input type="text" id="answer1">
+    <button onclick="checkAnswer(questions, document.getElementById('answer1').value)">Submit</button>
+    </div>
+    <h3 id="result"></h3>
+    <script>
+        class question {
+            constructor(question, answer) {
+                this.question = question;
+                this.answer = answer;
+            }
+        }
+        let q1 = new question("What is the capital of India?", "Delhi");
+        let q2 = new question("What is the capital of USA?", "Washington DC");
+        let q3 = new question("What is the capital of UK?", "London");
+        let q4 = new question("What is the capital of Australia?", "Canberra");
+        let q5 = new question("What is the capital of Japan?", "Tokyo");
+        let q6 = new question("What is the capital of China?", "Beijing");
+        let q7 = new question("What is the capital of Russia?", "Moscow");
+        let q8 = new question("What is the capital of France?", "Paris");
+        let q9 = new question("What is the capital of Germany?", "Berlin");
+        let q10 = new question("What is the capital of Brazil?", "Brasilia");
+        let questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
+        let currentQuestion = 0;
+        let score = 0;
+
+        function checkAnswer(questions, answer) {
+            if (questions[currentQuestion].answer.toLowerCase() === answer.toLowerCase()){
+                score++;
+                console.log("Correct Answer");
+            }
+            else{
+                console.log("Wrong Answer");
+            }
+            currentQuestion++;
+            if (currentQuestion < questions.length){
+                document.getElementById("Ques").innerText = questions[currentQuestion].question;
+                document.getElementById("answer1").value = "";
+            }
+            else{
+                document.getElementById("result").innerText = `Your score: ${score} / ${questions.length}`;
+                document.getElementById("main").style.display = "none";
+                document.getElementById("Ques").innerText = "Quiz Over !";
+            }
+        }
+    </script>
+</body>
+</html>
