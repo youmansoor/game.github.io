@@ -4,13 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #container{
+            background-color: rgb(5, 255, 5);
+            margin-top: 50px;
+            padding: 2.5vh;
+            width: 80%;
+            margin: auto;
+        }
+        #main{
+            display: block;
+            align-items: center;
+            margin: auto;
+            width: 50%;
+        }
+        #answer1{
+            width: 90%;
+            padding: 1vh;
+            margin-top: 1vh;
+        }
+        button{
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
+    <div id="container">
     <h1>Question</h1>
     <p id="Ques">What is the capital of India?</p>
     <div id="main">
-    <input type="text" id="answer1">
+    <input type="text" id="answer1"><br>
     <button onclick="checkAnswer(questions, document.getElementById('answer1').value)">Submit</button>
+    </div>
     </div>
     <h3 id="result"></h3>
     <h3 id="percentage"></h3>
