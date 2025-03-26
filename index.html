@@ -83,7 +83,7 @@
             }
             else{
                 document.getElementById("result").innerText = `Your score: ${score} / ${questions.length}`;
-                document.getElementById("percentage").innerText = `Percentage: ${score * 10}%`;
+                document.getElementById("percentage").innerText = "Percentage: " + (score / questions.length) * 100 + "%";
                 document.getElementById("main").style.display = "none";
                 document.getElementById("Ques").innerText = "Quiz Over !";
             }
