@@ -4,43 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body{
-            text-align: center;
-        }
-        #container{
-            margin: 0 auto;
-            width: 50%;
-            background-color: #21fc04;
-            border: 1px solid black;
-            border-radius: 5%;
-            padding: 2vh;
-        }
-        #answer1{
-            width: 80%;
-            height: 5%;
-        }
-        #main{
-            margin-top: 20px;
-        }
-        button{
-            margin-left: 10px;
-        }
-        #result{
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
-    <div id="container">
     <h1>Question</h1>
     <p id="Ques">What is the capital of India?</p>
     <div id="main">
-    <input type="text" id="answer1"><br><br>
+    <input type="text" id="answer1">
     <button onclick="checkAnswer(questions, document.getElementById('answer1').value)">Submit</button>
     </div>
     <h3 id="result"></h3>
-    </div>
+    <h3 id="percentage"></h3>
     <script>
         class question {
             constructor(question, answer) {
@@ -49,16 +22,21 @@
             }
         }
         let q1 = new question("What is the capital of India?", "Delhi");
-        let q2 = new question("What is the capital of USA?", "Washington DC");
-        let q3 = new question("What is the capital of UK?", "London");
-        let q4 = new question("What is the capital of Australia?", "Canberra");
-        let q5 = new question("What is the capital of Japan?", "Tokyo");
-        let q6 = new question("What is the capital of China?", "Beijing");
-        let q7 = new question("What is the capital of Russia?", "Moscow");
-        let q8 = new question("What is the capital of France?", "Paris");
-        let q9 = new question("What is the capital of Germany?", "Berlin");
-        let q10 = new question("What is the capital of Brazil?", "Brasilia");
-        let questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
+        let q2 = new question("What is the smallest planet in our solar system?", "Mercury");
+        let q3 = new question("What is the largest planet in our solar system?", "Jupiter");
+        let q4 = new question("Which element has the chemical symbol O?", "Oxygen");
+        let q5 = new question("What is the capital of USA?", "Washington DC");
+        let q6 = new question("What is the capital of UK?", "London");
+        let q7 = new question("What is the square root of 64?", "8");
+        let q8 = new question("What is the capital of Australia?", "Canberra");
+        let q9 = new question("What is the capital of Japan?", "Tokyo");
+        let q10 = new question("What is the tallest mountain in the world?", "Mount Everest");
+        let q11 = new question("What is the capital of China?", "Beijing");
+        let q12 = new question("What is the fastest land animal?", "Cheetah");
+        let q13 = new question("Which planet is known as the Red Planet?", "Mars");
+        let q14 = new question("What is the capital of Germany?", "Berlin");
+        let q15 = new question("What is the tallest building in the world?", "Burj Khalifa");
+        let questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15];
         let currentQuestion = 0;
         let score = 0;
 
@@ -77,6 +55,7 @@
             }
             else{
                 document.getElementById("result").innerText = `Your score: ${score} / ${questions.length}`;
+                document.getElementById("percentage").innerText = `Percentage: ${score * 10}%`;
                 document.getElementById("main").style.display = "none";
                 document.getElementById("Ques").innerText = "Quiz Over !";
             }
